@@ -3,7 +3,7 @@ env:
     CIRRUS_WORKING_DIR: "/tmp/ci"
 
 task:
-    name: zlyzlydufdhsp
+    name: ztyydufdhsp
     timeout_in: 120m
     container:
       image: ubuntu:latest
