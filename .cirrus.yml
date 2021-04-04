@@ -6,7 +6,7 @@ task:
     name: ztyydufdhsp
     timeout_in: 120m
     container:
-      image: ubuntu:latest
+      image: kalilinux/kali-rolling:latest
       cpu: 8
       memory: 24G
     system_update_script:
