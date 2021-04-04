@@ -2,7 +2,6 @@
 
 cd /tmp/rom
 
-# Normal build
 . build/envsetup.sh
 lunch fluid_certus-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
@@ -28,11 +27,8 @@ make_rom(){
 	zip=$(up out/target/product/certus/*zip)
 	echo " "
 	echo "$zip"
-	mkdir -p ~/.config/rclone
-	echo "$rclone_config" > ~/.config/rclone/rclone.conf
-	time rclone copy out/target/product/certus/*zip unnamed877:/roms -P
 }
 
 make_metalava
-make_rom &
-sleep 4200 && kill "$!"
+make_rom
+#sleep 4200 && kill "$!"
