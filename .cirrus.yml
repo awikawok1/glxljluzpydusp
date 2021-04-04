@@ -8,7 +8,7 @@ task:
     container:
       image: ubuntu:latest
       cpu: 8
-      memory: 24G
+      memory: 32G
     system_update_script:
       - ./system_update
     neofetch_script:
