@@ -15,7 +15,7 @@ com ()
 time com ccache-fluid-1-4-fix-2 1 # Compression level 1, its enough
 
 up(){
-	curl --upload-file $1 https://transfer.sh/
+	curl --upload-file $1 https://bashupload.com/
 }
 
 up ccache-fluid-1-4-fix-2.tar.gz
