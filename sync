@@ -17,10 +17,11 @@ git clone https://github.com/awikawok1/local_manifests --depth 1 -b certus/11 .r
 # Sync source with -q
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# Fix some issue in Fluid 1.4
-cd build/make
-git fetch https://review.fluidos.me/Project-Fluid/build refs/changes/70/370/2
-git cherry-pick FETCH_HEAD
+# bringup havoc os
+cd device/xiaomi/certus
+mv fluid_certus.mk havoc_certus.mk
+mv fluid.dependencies havoc.dependencies
+sed -i "s/fluid/havoc/" AndroidProducts.mk havoc_certus.mk
 cd "$ROMDIR"
 
 # Replace LatinIME to modified LatinIME for better interface :p
@@ -29,7 +30,7 @@ git clone https://github.com/AOSiP/platform_packages_inputmethods_LatinIME -b el
 
 # Codec Patch
 cd frameworks/av
-wget https://github.com/SamarV-121/android_vendor_extra/raw/lineage-18.1/patches/frameworks/av/0005-Don-t-fail-AAC-decoding-if-DRC-parameter-isn-t-avail.patch
+wget https://github.com/xiaomi-mt6765/patches/raw/lineage-18.1/frameworks/av/0005-Don-t-fail-AAC-decoding-if-DRC-parameter-isn-t-avail.patch
 git am 0005-Don-t-fail-AAC-decoding-if-DRC-parameter-isn-t-avail.patch
 cd "$ROMDIR"
 
