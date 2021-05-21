@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ROMDIR=/tmp/rom
-MANIFEST=https://github.com/Project-Fluid/manifest.git
-BRANCH=fluid-11
+MANIFEST=https://github.com/Havoc-OS/android_manifest.git
+BRANCH=eleven
 
 mkdir -p "$ROMDIR"
 cd "$ROMDIR"
