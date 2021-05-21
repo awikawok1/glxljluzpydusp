@@ -2,7 +2,9 @@
 
 echo "Downloading previous ccache . . . . . ."
 
+url=https://transfer.sh/aPtMS/ccache-havoc-4-5-1.tar.gz
 cd /tmp
-curl https://www.hisyam99.workers.dev/ccache-fluid-1-4-fix-2.tar.gz -o ccache-fluid-1-4-fix-2.tar.gz
-time tar xf ccache-fluid-1-4-fix-2.tar.gz
-rm -rf ccache-fluid-1-4-fix-2.tar.gz
+time aria2c $url -x16 -s50
+mv ccache-havoc-4-5-1.tar.gz ccache.tar.gz
+time tar xf ccache.tar.gz
+rm -rf ccache.tar.gz
